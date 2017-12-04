@@ -20,6 +20,9 @@ public class Major {
         self.curriculumName = curriculumName
     }
     
+    public func getAbbr() -> String {
+        return curriculumAbbr
+    }
     public func addCourse(newCourse: Course) {
         courses.append(newCourse)
     }

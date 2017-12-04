@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         request.httpMethod = "GET"
         
         let access_token = KiwonToken
-            
+        
         //You endpoint is setup as OAUTH 2.0 and we are sending Bearer token in Authorization header
         request.setValue("Bearer \(access_token)", forHTTPHeaderField: "Authorization")
         let session = URLSession.shared
@@ -63,7 +63,7 @@ class ViewController: UIViewController {
     
     
     
-    private let urlCourses = "https://ws.admin.washington.edu/student//v5/course?year=2017&quarter=autumn&curriculum_abbreviation=" // add abbreviation at the end
+    private let urlCourses = "https://ws.admin.washington.edu/student/v5/course.json?year=2017&quarter=autumn&curriculum_abbreviation=" // add abbreviation at the end
     /*
     private func getCourses(_ abbrs: [String]) {
         // change this url to test different resources
