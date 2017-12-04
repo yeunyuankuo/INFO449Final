@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var textLabel: UILabel!
     private let KiwonToken = "A78CBA6B-6964-42C2-B832-C54F32A58B1E"
+    // Information about the course
     private let urlDefault = "https://ws.admin.washington.edu/student/v5/course/2017,autumn,HCDE,318.json"
     private let urlSection = "https://ws.admin.washington.edu/student/v5/course/2017,winter,cse,417/a.json"
     private let urlDegree = "https://ws.admin.washington.edu/student/v5/degree.json?major_abbr=a%20a&pathway=0"
@@ -20,7 +21,7 @@ class ViewController: UIViewController {
     
     @IBAction func GetData(_ sender: UIButton) {
                                             // change this url to test different resources
-        var request = URLRequest(url: URL(string: urlCurr)!)
+        var request = URLRequest(url: URL(string: urlDefault)!)
         print(request)
         request.httpMethod = "GET"
         
@@ -36,8 +37,8 @@ class ViewController: UIViewController {
             if let data = data {
                 do{
                     let json = try JSONSerialization.jsonObject(with: data, options: []) as! NSDictionary
-                    self.curriculumParse(json)
-                    //print(json)
+                    //self.curriculumParse(json)
+                    print(json)
                     let jsonData = try JSONSerialization.data(withJSONObject: json, options: [])
                     
                 }
