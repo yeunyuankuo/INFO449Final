@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getCurr()
+        
         getClass()
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -33,6 +34,7 @@ class ViewController: UIViewController {
     private let urlCurr = "https://ws.admin.washington.edu/student/v5/curriculum.json?year=2017&quarter=autumn"
 
     
+    // Fetch all curriculums
     private func getCurr() {
         // change this url to test different resources
         var request = URLRequest(url: URL(string: urlCurr)!)
@@ -51,8 +53,8 @@ class ViewController: UIViewController {
             if let data = data {
                 do{
                     let json = try JSONSerialization.jsonObject(with: data, options: []) as! NSDictionary
-                        self.parseCurriculum(json)
-                    //print(json)
+                    self.parseCurriculum(json)
+                    print("hellow Here")
                     //let jsonData = try JSONSerialization.data(withJSONObject: json, options: [])
                     
                 }
@@ -60,19 +62,13 @@ class ViewController: UIViewController {
                     NSLog("\(error)")
                 }
             }
+            print("test1 \(self.majors.count)")
             }.resume()
+            print("test2 \(self.majors.count)")
     }
     
-    private func getClass() {
-        var urlCourses = "https://ws.admin.washington.edu/student/v5/course.json?year=2017&quarter=autumn&curriculum_abbreviation="
-        for each in majors {
-            let maj = each
-            let abbr = maj.getAbbr()
-            urlCourses = "\(urlCourses) + \(abbr)"
-            fetchCourses(urlCourses)
-            
-        }
-    }
+    
+    // Fetch all the courses within the given curriculum
     private func fetchCourses(_ url: String, _ indx: Int) {
         // change this url to test different resources
         var request = URLRequest(url: URL(string: url)!)
@@ -101,21 +97,43 @@ class ViewController: UIViewController {
             }
             }.resume()
     }
+    
+    // Parse the curriculum and put information into majors object
     private func parseCurriculum(_ json: NSDictionary) {
         let fields = json["Curricula"] as! NSArray
         for each in fields {
             let abbr = each as! NSDictionary
             let mjr = Major(curriculumAbbr: abbr["CurriculumAbbreviation"] as! String,curriculumFullName: abbr["CurriculumFullName"] as! String, curriculumName: abbr["CurriculumName"] as! String)
             majors.append(mjr)
-            print(mjr)
+        }
+    }
+    
+    // Parse the returned list of classes and save it into class objects.
+    private func getClass() {
+        var urlCourses = "https://ws.admin.washington.edu/student/v5/course.json?year=2017&quarter=autumn&curriculum_abbreviation="
+        var index = 0
+        print("HIllo??")
+        
+        for each in majors {
+            let maj = each
+            let abbr = maj.getAbbr()
+            urlCourses = "\(urlCourses) + \(abbr)"
+            print(urlCourses)
+            fetchCourses(urlCourses, index)
+            index += 1
+            print("HIllo")
         }
     }
     
     private func parseClasses(_ json: NSDictionary, _ indx: Int) {
         let mjr = majors[indx]
-        let courses = [Course]()
-        for cls in 
-        mjr.setCourses(newCourses: <#T##[Course]#>)
+        var mjrCourses = [Course]()
+        for each in json {
+            let cls = each as! NSDictionary
+            let course = Course(courseNumber: cls["courseNumber"] as! Int, courseTitle: cls["courseTitle"] as! String, courseTitleLong: cls["courseTitleLong"] as! String, courseAbbr: cls["courseAbbr"] as! String)
+            mjrCourses.append(course)
+        }
+        mjr.setCourses(newCourses: mjrCourses)
     }
 
 }
