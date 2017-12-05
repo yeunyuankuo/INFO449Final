@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A4C4EC61FD606AC00D0401E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4C4EC51FD606AC00D0401E /* LoginViewController.swift */; };
+		2A4C4EC81FD6083000D0401E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4C4EC71FD6083000D0401E /* ProfileViewController.swift */; };
+		2A946C131FD55FA2001A1729 /* CourseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A946C121FD55FA2001A1729 /* CourseListViewController.swift */; };
+		2A946C151FD56085001A1729 /* CourseFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A946C141FD56085001A1729 /* CourseFilterViewController.swift */; };
+		2A946C171FD560AD001A1729 /* CourseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A946C161FD560AD001A1729 /* CourseDetailViewController.swift */; };
 		4543C2E51FD4D30900132760 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4543C2E41FD4D30900132760 /* AppDelegate.swift */; };
-		4543C2E71FD4D30900132760 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4543C2E61FD4D30900132760 /* ViewController.swift */; };
 		4543C2EA1FD4D30900132760 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4543C2E81FD4D30900132760 /* Main.storyboard */; };
 		4543C2EC1FD4D30900132760 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4543C2EB1FD4D30900132760 /* Assets.xcassets */; };
 		4543C2EF1FD4D30900132760 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4543C2ED1FD4D30900132760 /* LaunchScreen.storyboard */; };
@@ -17,9 +21,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A4C4EC51FD606AC00D0401E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2A4C4EC71FD6083000D0401E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		2A946C121FD55FA2001A1729 /* CourseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListViewController.swift; sourceTree = "<group>"; };
+		2A946C141FD56085001A1729 /* CourseFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseFilterViewController.swift; sourceTree = "<group>"; };
+		2A946C161FD560AD001A1729 /* CourseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailViewController.swift; sourceTree = "<group>"; };
 		4543C2E11FD4D30900132760 /* iDub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iDub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4543C2E41FD4D30900132760 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4543C2E61FD4D30900132760 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4543C2E91FD4D30900132760 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4543C2EB1FD4D30900132760 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4543C2EE1FD4D30900132760 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,7 +67,11 @@
 			isa = PBXGroup;
 			children = (
 				4543C2E41FD4D30900132760 /* AppDelegate.swift */,
-				4543C2E61FD4D30900132760 /* ViewController.swift */,
+				2A946C121FD55FA2001A1729 /* CourseListViewController.swift */,
+				2A946C141FD56085001A1729 /* CourseFilterViewController.swift */,
+				2A946C161FD560AD001A1729 /* CourseDetailViewController.swift */,
+				2A4C4EC51FD606AC00D0401E /* LoginViewController.swift */,
+				2A4C4EC71FD6083000D0401E /* ProfileViewController.swift */,
 				4543C2E81FD4D30900132760 /* Main.storyboard */,
 				4543C2EB1FD4D30900132760 /* Assets.xcassets */,
 				4543C2ED1FD4D30900132760 /* LaunchScreen.storyboard */,
@@ -142,10 +154,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A4C4EC61FD606AC00D0401E /* LoginViewController.swift in Sources */,
 				6CF6B2AB1FD4E5670088D9E6 /* Course.swift in Sources */,
-				4543C2E71FD4D30900132760 /* ViewController.swift in Sources */,
+				2A946C131FD55FA2001A1729 /* CourseListViewController.swift in Sources */,
 				6CF6B2A91FD4E5320088D9E6 /* Major.swift in Sources */,
+				2A946C151FD56085001A1729 /* CourseFilterViewController.swift in Sources */,
 				4543C2E51FD4D30900132760 /* AppDelegate.swift in Sources */,
+				2A4C4EC81FD6083000D0401E /* ProfileViewController.swift in Sources */,
+				2A946C171FD560AD001A1729 /* CourseDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
