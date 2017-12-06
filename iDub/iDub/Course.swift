@@ -9,7 +9,7 @@
 import Foundation
 
 public class Course {
-    private let courseNumber: Int
+    private let courseNumber: String
     private let courseTitle: String
     private let courseTitleLong: String
     private var courseAbbr: String
@@ -25,7 +25,7 @@ public class Course {
     private var SLN = 0
     private var notes = ""
     
-    init(courseNumber: Int, courseTitle: String, courseTitleLong: String, courseAbbr: String) {
+    init(courseNumber: String, courseTitle: String, courseTitleLong: String, courseAbbr: String) {
         self.courseNumber = courseNumber
         self.courseTitle = courseTitle
         self.courseTitleLong = courseTitleLong
