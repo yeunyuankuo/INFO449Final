@@ -100,7 +100,7 @@ class CourseListViewController: UIViewController, UITableViewDataSource, UITable
     
     
     
-    // ************
+    // ************ Kelley *************
     
     
     
@@ -214,8 +214,8 @@ class CourseListViewController: UIViewController, UITableViewDataSource, UITable
         if (courseJson != nil) {
             for each in courseJson! {
                 let cls = each as! NSDictionary
-                print(cls)
-                let course = Course(courseNumber: cls["CourseNumber"] as! String, courseTitle: cls["CourseTitle"] as! String, courseTitleLong: cls["CourseTitleLong"] as! String, courseAbbr: cls["CourseAbbr"] as! String)
+                //print(cls)
+                let course = Course(courseNumber: cls["CourseNumber"] as! String, courseTitle: cls["CourseTitle"] as! String, courseTitleLong: cls["CourseTitleLong"] as! String, courseAbbr: cls["CurriculumAbbreviation"] as! String)
                 mjrCourses.append(course)
             }
             mjr.setCourses(newCourses: mjrCourses)

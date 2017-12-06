@@ -27,6 +27,10 @@ public class Major {
         courses.append(newCourse)
     }
     
+    public func getCourses() -> [Course] {
+        return courses
+    }
+    
     public func setCourses(newCourses: [Course]) {
         courses = newCourses
     }
