@@ -12,10 +12,56 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    var users = [User]()
+    var currUser: User!
+    var firstTime: Bool! = true
+    let quarter = ["autumn", "winter", "spring", "summer"]
+    let availableYears = [2015, 2016, 2017, 2018]
+    var targetIndex = [-1, -1] // [year, quarter]
+    
+    func applicationDidFinishLaunching(_ application: UIApplication) {
+        let hasLaunchedKey = "HasLaunched"
+        let defaults = UserDefaults.standard
+        let hasLaunched = defaults.bool(forKey: hasLaunchedKey)
+        
+        if !hasLaunched {
+            defaults.set(true, forKey: hasLaunchedKey)
+        }
+        defaults.synchronize()  // Newly added
+    }
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // ADDED: Purple scheme for iDub
+        func hexStringToUIColor (hex:String) -> UIColor {
+            var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+            if (cString.hasPrefix("#")) {
+                cString.remove(at: cString.startIndex)
+            }
+            if ((cString.characters.count) != 6) {
+                return UIColor.gray
+            }
+            var rgbValue:UInt32 = 0
+            Scanner(string: cString).scanHexInt32(&rgbValue)
+            
+            return UIColor(
+                red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+                green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+                blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+                alpha: CGFloat(1.0)
+            )
+        }
+        UINavigationBar.appearance().barTintColor = hexStringToUIColor(hex: "#8362D3")
+        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white, NSAttributedStringKey.font: UIFont(name: "AvenirNext-Bold", size: 20)!]
+        
+        UITabBar.appearance().barTintColor = hexStringToUIColor(hex: "#8362D3")
+        UITabBar.appearance().tintColor = UIColor.white
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.white], for: .selected)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.white], for: .normal)
+        
         return true
     }
 

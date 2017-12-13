@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A07F06F1FDB47E8007EF55B /* CourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A07F06E1FDB47E8007EF55B /* CourseTableViewCell.swift */; };
+		2A07F0711FDB6C6D007EF55B /* CoursePlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A07F0701FDB6C6D007EF55B /* CoursePlanViewController.swift */; };
 		2A4C4EC61FD606AC00D0401E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4C4EC51FD606AC00D0401E /* LoginViewController.swift */; };
 		2A4C4EC81FD6083000D0401E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4C4EC71FD6083000D0401E /* ProfileViewController.swift */; };
+		2A55AB8E1FDCAFA800B1F45E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A55AB8D1FDCAFA800B1F45E /* User.swift */; };
 		2A946C131FD55FA2001A1729 /* CourseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A946C121FD55FA2001A1729 /* CourseListViewController.swift */; };
 		2A946C151FD56085001A1729 /* CourseFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A946C141FD56085001A1729 /* CourseFilterViewController.swift */; };
 		2A946C171FD560AD001A1729 /* CourseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A946C161FD560AD001A1729 /* CourseDetailViewController.swift */; };
@@ -21,8 +24,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A07F06E1FDB47E8007EF55B /* CourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTableViewCell.swift; sourceTree = "<group>"; };
+		2A07F0701FDB6C6D007EF55B /* CoursePlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursePlanViewController.swift; sourceTree = "<group>"; };
 		2A4C4EC51FD606AC00D0401E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2A4C4EC71FD6083000D0401E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		2A55AB8D1FDCAFA800B1F45E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2A946C121FD55FA2001A1729 /* CourseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListViewController.swift; sourceTree = "<group>"; };
 		2A946C141FD56085001A1729 /* CourseFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseFilterViewController.swift; sourceTree = "<group>"; };
 		2A946C161FD560AD001A1729 /* CourseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailViewController.swift; sourceTree = "<group>"; };
@@ -70,14 +76,17 @@
 				2A946C121FD55FA2001A1729 /* CourseListViewController.swift */,
 				2A946C141FD56085001A1729 /* CourseFilterViewController.swift */,
 				2A946C161FD560AD001A1729 /* CourseDetailViewController.swift */,
+				2A07F0701FDB6C6D007EF55B /* CoursePlanViewController.swift */,
 				2A4C4EC51FD606AC00D0401E /* LoginViewController.swift */,
 				2A4C4EC71FD6083000D0401E /* ProfileViewController.swift */,
 				4543C2E81FD4D30900132760 /* Main.storyboard */,
+				2A07F06E1FDB47E8007EF55B /* CourseTableViewCell.swift */,
 				4543C2EB1FD4D30900132760 /* Assets.xcassets */,
 				4543C2ED1FD4D30900132760 /* LaunchScreen.storyboard */,
 				4543C2F01FD4D30900132760 /* Info.plist */,
 				6CF6B2A81FD4E5320088D9E6 /* Major.swift */,
 				6CF6B2AA1FD4E5670088D9E6 /* Course.swift */,
+				2A55AB8D1FDCAFA800B1F45E /* User.swift */,
 			);
 			path = iDub;
 			sourceTree = "<group>";
@@ -156,12 +165,15 @@
 			files = (
 				2A4C4EC61FD606AC00D0401E /* LoginViewController.swift in Sources */,
 				6CF6B2AB1FD4E5670088D9E6 /* Course.swift in Sources */,
+				2A07F0711FDB6C6D007EF55B /* CoursePlanViewController.swift in Sources */,
 				2A946C131FD55FA2001A1729 /* CourseListViewController.swift in Sources */,
 				6CF6B2A91FD4E5320088D9E6 /* Major.swift in Sources */,
 				2A946C151FD56085001A1729 /* CourseFilterViewController.swift in Sources */,
+				2A07F06F1FDB47E8007EF55B /* CourseTableViewCell.swift in Sources */,
 				4543C2E51FD4D30900132760 /* AppDelegate.swift in Sources */,
 				2A4C4EC81FD6083000D0401E /* ProfileViewController.swift in Sources */,
 				2A946C171FD560AD001A1729 /* CourseDetailViewController.swift in Sources */,
+				2A55AB8E1FDCAFA800B1F45E /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,9 +311,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G7LBJES386;
 				INFOPLIST_FILE = iDub/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.uw.ischool.iDub;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.uw.ischool.iDub.iDub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -313,9 +327,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G7LBJES386;
 				INFOPLIST_FILE = iDub/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.uw.ischool.iDub;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.uw.ischool.iDub.iDub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
